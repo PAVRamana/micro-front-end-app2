@@ -1,0 +1,94 @@
+{
+  "name": "micro-front-end-app2",
+  "version": "0.1.0",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
+  "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.25",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-redux": "^7.1.22",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "antd": "^4.10.0",
+    "axios": "^1.4.0",
+    "dateformat": "^5.0.3",
+    "i": "^0.3.7",
+    "lodash": "^4.17.21",
+    "node-sass": "^4.14.1",
+    "npm": "^8.15.1",
+    "re-resizable": "^6.9.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.5.5",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "FAST_REFRESH=false react-scripts start",
+    "build": "npm run build:lib && npm run build:types",
+    "build:types": "tsc --outDir ./dist/types --declaration --emitDeclarationOnly",
+    "build:lib": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:ts": "eslint src --ext .ts,.tsx",
+    "pretty": "prettier --write \"**/*.{json,ts,tsx}\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.181",
+    "@types/react-resizable": "^1.7.4",
+    "@types/react-rte": "^0.16.3",
+    "eslint": "^7.30.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "rollup": "^3.10.0",
+    "rollup-plugin-node-externals": "^5.1.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
